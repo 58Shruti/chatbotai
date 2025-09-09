@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { product } from "../product";
 import { shipping } from "../shipping";
 import { faqs } from "../faq";
@@ -293,12 +293,3 @@ Here are some things I can help you with:
     </PerplexityContext.Provider>
   );
 };
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const usePerplexity = () => {
-  const context = useContext(PerplexityContext);
-  if (!context) {
-    throw new Error('usePerplexity must be used within a PerplexityProvider');
-  }
-  return context;
-}; 

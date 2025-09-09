@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./Chatpage.css"; // Import the CSS file for styling
+import { usePerplexity } from "./context/usePerplexity"; // Using Perplexity hook
 import ProductCard from "./components/ProductCard";
 import bgimg from "./assets/Chatbot-Flat-Vector.png";
 import ChatBg from "./assets/chatbg.png";
-import { usePerplexity } from "./context/PerplexityContext";
 
 function Chatpage() {
   const { messages, isLoading, messagesEndRef, sendMessage } = usePerplexity(); // Using Perplexity hook
