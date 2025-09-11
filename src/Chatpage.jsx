@@ -4,6 +4,8 @@ import { usePerplexity } from "./context/usePerplexity"; // Using Perplexity hoo
 import ProductCard from "./components/ProductCard";
 import bgimg from "./assets/Chatbot-Flat-Vector.png";
 import ChatBg from "./assets/chatbg.png";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 function Chatpage() {
   const { messages, isLoading, messagesEndRef, sendMessage } = usePerplexity(); // Using Perplexity hook
@@ -76,36 +78,67 @@ function Chatpage() {
                   {messages.map((msg, index) => (
                     <div key={index} className={`message ${msg.sender}`}>
                       {msg.sender === "bot" ? (
+
+
+                      
+                    (() => {
+                      const text = msg.text || "";
+                      let products = [];
+                      let extraText = "";
+
+                      if (text.startsWith("[PRODUCTS]")) {
+                        try {
+                          // Remove the [PRODUCTS] prefix and trim
+                          const jsonPart = text.replace("[PRODUCTS]", "").trim();
+
+                          // Match the JSON array (from first '[' to last ']')
+                          const arrayMatch = jsonPart.match(/\[.*\]/s); // /s allows newlines
+
+                          if (arrayMatch) {
+                            products = JSON.parse(arrayMatch[0]); // parse only the array
+
+                            // Anything after the array is extra text
+                            extraText = jsonPart.replace(arrayMatch[0], "").trim();
+                          }
+                        } catch (e) {
+                          console.error(
+                            "Failed to parse products JSON:",
+                            e,
+                            "\nOriginal text:",
+                            text
+                          );
+                        }
+                      }
+
+                      return (
                         <div>
-                          <p>
-                          {msg.text.split("\n").map((line, lineIndex) => (
-                            <React.Fragment key={lineIndex}>
-                              {line}
-                              {lineIndex < msg.text.split("\n").length - 1 && (
-                                <br />
-                              )}
-                            </React.Fragment>
-                          ))}</p>
-                          {msg.products && msg.products.length > 0 && (
-                            <div className="product-cards-container">
-                              {msg.products.map((product, productIndex) => (
-                                <ProductCard
-                                  key={productIndex}
-                                  product={product}
-                                />
+                          {/* Render any extra text after product array */}
+                          {extraText && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                              {extraText}
+                            </ReactMarkdown>
+                          )}
+
+                          {/* Render product cards if products found */}
+                          {products.length > 0 && (
+                           <div className="product-cards-container">
+                              {products.map((product, i) => (
+                                <ProductCard key={i} product={product} />
                               ))}
                             </div>
                           )}
+
+                          {/* If no products, render text as normal */}
+                          {products.length === 0 && !extraText && (
+                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                              {text}
+                            </ReactMarkdown>
+                          )}
                         </div>
-                      ) : (
-                        msg.text.split("\n").map((line, lineIndex) => (
-                          <React.Fragment key={lineIndex}>
-                            {line}
-                            {lineIndex < msg.text.split("\n").length - 1 && (
-                              <br />
-                            )}
-                          </React.Fragment>
-                        ))
+                      );
+                    })()
+                  ) : (
+                    <p>{msg.text}</p>
                       )}
                     </div>
                   ))}

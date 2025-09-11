@@ -2,16 +2,22 @@ import React from 'react';
 import './ProductCard.css';
 
 const ProductCard = ({ product }) => {
+  if (!product) return null;
+
+  // Safe image URL (fallback if undefined)
+  const imageUrl = product.image || "";
+
   return (
     <div className="product-card">
       <div className="product-image">
-        <img 
-          src={product.image} 
-          alt={product.name}
-          onError={(e) => {
-            e.target.src = 'https://via.placeholder.com/200x200?text=Product+Image';
-          }}
+       {imageUrl && (
+        <img
+          className="product-image"
+          src={imageUrl}
+          alt={product.name || "product image"}
         />
+      )}
+
       </div>
       <div className="product-info">
         <h3 className="product-name">{product.name}</h3>
@@ -38,7 +44,7 @@ const ProductCard = ({ product }) => {
             {product.inStock ? '✅ In Stock' : '❌ Out of Stock'}
           </div>
           <div className="sizes">
-            📏 Sizes: {product.variants.map(v => v.size).join(', ')}
+            📏 Sizes: {product.sizes}
           </div>
         </div>
       </div>
