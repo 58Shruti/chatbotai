@@ -6,7 +6,6 @@ const ProductCard = ({ product }) => {
 
   // Safe image URL (fallback if undefined)
   const imageUrl = product.image || "";
-
   return (
     <div className="product-card">
       <div className="product-image">
@@ -23,11 +22,11 @@ const ProductCard = ({ product }) => {
         <h3 className="product-name">{product.name}</h3>
         <p className="product-description">{product.description}</p>
         <div className="product-details">
-          <div className="price">₹{product.price}</div>
+          <div className="price">{product.price}</div>
           <div className="rating">
-            ⭐ {product.rating}/5 ({product.reviews} reviews)
+             {product.rating}/5 ({product.reviews} reviews)
           </div>
-          <div className="category">🏷️ {product.category}</div>
+          <div className="category">{product.category}</div>
           {product.color && (
             <div className="color">🎨 Color: {product.color}</div>
           )}
@@ -44,7 +43,7 @@ const ProductCard = ({ product }) => {
             {product.inStock ? '✅ In Stock' : '❌ Out of Stock'}
           </div>
           <div className="sizes">
-            📏 Sizes: {product.sizes}
+             Sizes: {product.sizes}
           </div>
         </div>
       </div>
