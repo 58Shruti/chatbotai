@@ -90,15 +90,11 @@ function Chatpage() {
                         try {
                           // Remove the [PRODUCTS] prefix and trim
                           const jsonPart = text.replace("[PRODUCTS]", "").trim();
-
-                          // Match the JSON array (from first '[' to last ']')
-                          const arrayMatch = jsonPart.match(/\[.*\]/s); // /s allows newlines
-
-                          if (arrayMatch) {
-                            products = JSON.parse(arrayMatch[0]); // parse only the array
-
-                            // Anything after the array is extra text
-                            extraText = jsonPart.replace(arrayMatch[0], "").trim();
+                          const arrayMatches = [...jsonPart.matchAll(/\[.*?\]/gs),];
+                          if (arrayMatches.length > 0) {
+                            const lastArray = arrayMatches[arrayMatches.length - 1][0]; // pick the last array
+                            products = JSON.parse(lastArray);
+                            extraText = jsonPart.replace(lastArray, "").trim();
                           }
                         } catch (e) {
                           console.error(

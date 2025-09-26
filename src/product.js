@@ -1,11 +1,11 @@
 export const product = [
   {
     "id": "1",
-    "name": "Tee Model 1",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 1",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 1199,
     "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "White",
     "design": "Plain",
     "material": "100% Cotton",
@@ -14,27 +14,9 @@ export const product = [
     "reviews": 21,
     "inStock": true,
     "variants": [
-      {
-        "id": "1-S",
-        "size": "S",
-        "price": 1199,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "1-M",
-        "size": "M",
-        "price": 1199,
-        "inStock": true,
-        "stockQuantity": 11
-      },
-      {
-        "id": "1-L",
-        "size": "L",
-        "price": 1199,
-        "inStock": true,
-        "stockQuantity": 12
-      }
+      { "id": "1-S", "size": "S", "price": 1199, "inStock": true, "stockQuantity": 10 },
+      { "id": "1-M", "size": "M", "price": 1199, "inStock": true, "stockQuantity": 11 },
+      { "id": "1-L", "size": "L", "price": 1199, "inStock": true, "stockQuantity": 12 }
     ]
   },
   {
@@ -167,11 +149,11 @@ export const product = [
   },
   {
     "id": "5",
-    "name": "Tee Model 5",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 5",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 999,
     "image": "https://images.unsplash.com/photo-1625728273603-0404614abb7e?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Blue",
     "design": "Graphic Print",
     "material": "100% Cotton",
@@ -180,27 +162,9 @@ export const product = [
     "reviews": 25,
     "inStock": true,
     "variants": [
-      {
-        "id": "5-S",
-        "size": "S",
-        "price": 999,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "5-M",
-        "size": "M",
-        "price": 999,
-        "inStock": true,
-        "stockQuantity": 15
-      },
-      {
-        "id": "5-L",
-        "size": "L",
-        "price": 999,
-        "inStock": true,
-        "stockQuantity": 20
-      }
+      { "id": "5-S", "size": "S", "price": 999, "inStock": true, "stockQuantity": 10 },
+      { "id": "5-M", "size": "M", "price": 999, "inStock": true, "stockQuantity": 15 },
+      { "id": "5-L", "size": "L", "price": 999, "inStock": true, "stockQuantity": 20 }
     ]
   },
   {
@@ -333,11 +297,11 @@ export const product = [
   },
   {
     "id": "9",
-    "name": "Tee Model 9",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 9",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 1799,
     "image": "https://images.unsplash.com/photo-1750767303644-5908f369147b?w=500&auto=format&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Gray",
     "design": "Plain",
     "material": "100% Cotton",
@@ -346,27 +310,9 @@ export const product = [
     "reviews": 29,
     "inStock": true,
     "variants": [
-      {
-        "id": "9-S",
-        "size": "S",
-        "price": 1799,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "9-M",
-        "size": "M",
-        "price": 1799,
-        "inStock": true,
-        "stockQuantity": 19
-      },
-      {
-        "id": "9-L",
-        "size": "L",
-        "price": 1799,
-        "inStock": true,
-        "stockQuantity": 28
-      }
+      { "id": "9-S", "size": "S", "price": 1799, "inStock": true, "stockQuantity": 10 },
+      { "id": "9-M", "size": "M", "price": 1799, "inStock": true, "stockQuantity": 19 },
+      { "id": "9-L", "size": "L", "price": 1799, "inStock": true, "stockQuantity": 28 }
     ]
   },
   {
@@ -497,13 +443,13 @@ export const product = [
       }
     ]
   },
-  {
+   {
     "id": "13",
-    "name": "Tee Model 13",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 13",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 899,
     "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Black",
     "design": "Plain",
     "material": "100% Cotton",
@@ -512,27 +458,9 @@ export const product = [
     "reviews": 33,
     "inStock": true,
     "variants": [
-      {
-        "id": "13-S",
-        "size": "S",
-        "price": 899,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "13-M",
-        "size": "M",
-        "price": 899,
-        "inStock": true,
-        "stockQuantity": 23
-      },
-      {
-        "id": "13-L",
-        "size": "L",
-        "price": 899,
-        "inStock": true,
-        "stockQuantity": 36
-      }
+      { "id": "13-S", "size": "S", "price": 899, "inStock": true, "stockQuantity": 10 },
+      { "id": "13-M", "size": "M", "price": 899, "inStock": true, "stockQuantity": 23 },
+      { "id": "13-L", "size": "L", "price": 899, "inStock": true, "stockQuantity": 36 }
     ]
   },
   {
@@ -665,11 +593,11 @@ export const product = [
   },
   {
     "id": "17",
-    "name": "Tee Model 17",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 17",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 1399,
     "image": "https://images.unsplash.com/photo-1595529057255-ffd9e267d037?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Red",
     "design": "Plain",
     "material": "100% Cotton",
@@ -678,27 +606,9 @@ export const product = [
     "reviews": 37,
     "inStock": true,
     "variants": [
-      {
-        "id": "17-S",
-        "size": "S",
-        "price": 1399,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "17-M",
-        "size": "M",
-        "price": 1399,
-        "inStock": true,
-        "stockQuantity": 27
-      },
-      {
-        "id": "17-L",
-        "size": "L",
-        "price": 1399,
-        "inStock": true,
-        "stockQuantity": 14
-      }
+      { "id": "17-S", "size": "S", "price": 1399, "inStock": true, "stockQuantity": 10 },
+      { "id": "17-M", "size": "M", "price": 1399, "inStock": true, "stockQuantity": 27 },
+      { "id": "17-L", "size": "L", "price": 1399, "inStock": true, "stockQuantity": 14 }
     ]
   },
   {
@@ -831,11 +741,11 @@ export const product = [
   },
   {
     "id": "21",
-    "name": "Tee Model 21",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 21",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 1199,
     "image": "https://images.unsplash.com/photo-1734470274985-adee3de1ad95?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Green",
     "design": "Graphic Print",
     "material": "100% Cotton",
@@ -844,27 +754,9 @@ export const product = [
     "reviews": 41,
     "inStock": true,
     "variants": [
-      {
-        "id": "21-S",
-        "size": "S",
-        "price": 1199,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "21-M",
-        "size": "M",
-        "price": 1199,
-        "inStock": true,
-        "stockQuantity": 31
-      },
-      {
-        "id": "21-L",
-        "size": "L",
-        "price": 1199,
-        "inStock": true,
-        "stockQuantity": 22
-      }
+      { "id": "21-S", "size": "S", "price": 1199, "inStock": true, "stockQuantity": 10 },
+      { "id": "21-M", "size": "M", "price": 1199, "inStock": true, "stockQuantity": 31 },
+      { "id": "21-L", "size": "L", "price": 1199, "inStock": true, "stockQuantity": 22 }
     ]
   },
   {
@@ -997,11 +889,11 @@ export const product = [
   },
   {
     "id": "25",
-    "name": "Tee Model 25",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 25",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 999,
     "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Black",
     "design": "Plain",
     "material": "100% Cotton",
@@ -1010,27 +902,9 @@ export const product = [
     "reviews": 45,
     "inStock": true,
     "variants": [
-      {
-        "id": "25-S",
-        "size": "S",
-        "price": 999,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "25-M",
-        "size": "M",
-        "price": 999,
-        "inStock": true,
-        "stockQuantity": 35
-      },
-      {
-        "id": "25-L",
-        "size": "L",
-        "price": 999,
-        "inStock": true,
-        "stockQuantity": 30
-      }
+      { "id": "25-S", "size": "S", "price": 999, "inStock": true, "stockQuantity": 10 },
+      { "id": "25-M", "size": "M", "price": 999, "inStock": true, "stockQuantity": 35 },
+      { "id": "25-L", "size": "L", "price": 999, "inStock": true, "stockQuantity": 30 }
     ]
   },
   {
@@ -1163,11 +1037,11 @@ export const product = [
   },
   {
     "id": "29",
-    "name": "Tee Model 29",
-    "description": "High-quality tees for everyday wear.",
+    "name": "Tshirt Model 29",
+    "description": "High-quality tshirts for everyday wear.",
     "price": 1799,
     "image": "https://images.unsplash.com/photo-1632799442159-42bb99708e37?w=400&h=500&fit=crop",
-    "category": "Tees",
+    "category": "Tshirts",
     "color": "Orange",
     "design": "Graphic Print",
     "material": "100% Cotton",
@@ -1176,27 +1050,9 @@ export const product = [
     "reviews": 49,
     "inStock": false,
     "variants": [
-      {
-        "id": "29-S",
-        "size": "S",
-        "price": 1799,
-        "inStock": true,
-        "stockQuantity": 10
-      },
-      {
-        "id": "29-M",
-        "size": "M",
-        "price": 1799,
-        "inStock": true,
-        "stockQuantity": 39
-      },
-      {
-        "id": "29-L",
-        "size": "L",
-        "price": 1799,
-        "inStock": true,
-        "stockQuantity": 38
-      }
+      { "id": "29-S", "size": "S", "price": 1799, "inStock": true, "stockQuantity": 10 },
+      { "id": "29-M", "size": "M", "price": 1799, "inStock": true, "stockQuantity": 39 },
+      { "id": "29-L", "size": "L", "price": 1799, "inStock": true, "stockQuantity": 25 }
     ]
   },
   {
