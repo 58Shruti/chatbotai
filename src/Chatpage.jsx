@@ -23,8 +23,8 @@ function Chatpage() {
     <div className="chat-container">
       <img src={bgimg} className="bgimg" alt="" />
       <div className="container">
-        <div className="row">
-          <div className="col-md-7 d-flex align-items-center justify-content-center">
+        <div className="row gy-4">
+          <div className="col-lg-7 d-flex align-items-center justify-content-center">
             <div className="chat-header">
               <h4>E-Commerce Chatbot Shop Smarter</h4>
               <p>
@@ -66,7 +66,7 @@ function Chatpage() {
               </ul>
             </div>
           </div>
-          <div className="col-md-5 d-flex align-items-center justify-content-center">
+          <div className="col-lg-5 d-flex align-items-center justify-content-center">
             <div className="chat-wrapper">
               <div className="chat-window">
                 <div className="chat-messages">
@@ -78,63 +78,60 @@ function Chatpage() {
                   {messages.map((msg, index) => (
                     <div key={index} className={`message ${msg.sender}`}>
                       {msg.sender === "bot" ? (
+                        (() => {
+                          const text = msg.text || "";
+                          let products = [];
+                          let extraText = "";
 
-
-                      
-                    (() => {
-                      const text = msg.text || "";
-                      let products = [];
-                      let extraText = "";
-
-                      if (text.startsWith("[PRODUCTS]")) {
-                        try {
-                          // Remove the [PRODUCTS] prefix and trim
+                          if (text.startsWith("[PRODUCTS]")) {
+                            try {
+                              // Remove the [PRODUCTS] prefix and trim
                           const jsonPart = text.replace("[PRODUCTS]", "").trim();
                           const arrayMatches = [...jsonPart.matchAll(/\[.*?\]/gs),];
-                          if (arrayMatches.length > 0) {
+                              if (arrayMatches.length > 0) {
                             const lastArray = arrayMatches[arrayMatches.length - 1][0]; // pick the last array
-                            products = JSON.parse(lastArray);
+                                products = JSON.parse(lastArray);
                             extraText = jsonPart.replace(lastArray, "").trim();
+                              }
+                            } catch (e) {
+                              console.error(
+                                "Failed to parse products JSON:",
+                                e,
+                                "\nOriginal text:",
+                                text
+                              );
+                            }
                           }
-                        } catch (e) {
-                          console.error(
-                            "Failed to parse products JSON:",
-                            e,
-                            "\nOriginal text:",
-                            text
-                          );
-                        }
-                      }
 
-                      return (
-                        <div>
-                          {/* Render any extra text after product array */}
-                          {extraText && (
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                              {extraText}
-                            </ReactMarkdown>
-                          )}
+                          return (
+                            <div>
+                              {/* Render any extra text after product array */}
+                              {extraText && (
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                  {extraText}
+                                </ReactMarkdown>
+                              )}
 
-                          {/* Render product cards if products found */}
-                          {products.length > 0 && (
-                           <div className="product-cards-container">
-                              {products.map((product, i) => (
-                                <ProductCard key={i} product={product} />
-                              ))}
+                              {/* Render product cards if products found */}
+                              {products.length > 0 && (
+                                <div className="product-cards-container">
+                                  {products.map((product, i) => (
+                                    <ProductCard key={i} product={product} />
+                                  ))}
+                                </div>
+                              )}
+
+                              {/* If no products, render text as normal */}
+                              {products.length === 0 && !extraText && (
+                                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                  {text}
+                                </ReactMarkdown>
+                              )}
                             </div>
-                          )}
-
-                          {/* If no products, render text as normal */}
-                          {products.length === 0 && !extraText && (
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                              {text}
-                            </ReactMarkdown>
-                          )}
-                        </div>
-                      );
-                    })()
-                  ) : (
-                    <p>{msg.text}</p>
+                          );
+                        })()
+                      ) : (
+                        <p>{msg.text}</p>
                       )}
                     </div>
                   ))}
@@ -154,8 +151,7 @@ function Chatpage() {
               </div>
 
               <form onSubmit={handleSubmit} className="chat-input-container">
-                <input
-                  type="text"
+                <textarea
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   placeholder="Ask me anything about our products and services..."

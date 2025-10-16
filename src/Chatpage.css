@@ -5,7 +5,7 @@
   background: linear-gradient(135deg, #000 0%, #764ba2 100%);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     sans-serif;
-  /* padding: 10px; */
+  padding: 20px;
   align-items: center;
 }
 
@@ -163,8 +163,7 @@
 
 .message.bot {
   align-self: flex-start;
-  background: linear-gradient(135deg, #c1c1c1 0%, #ffffff 100%);
-  color: #1e293b;
+  background: #613d851c;
   /* border: 1px solid #e2e8f0; */
   margin-right: auto;
   border-radius: 0px 30px 30px 30px;
@@ -189,7 +188,7 @@
 
 .chat-input {
   flex-grow: 1;
-  padding: 1rem 1.25rem;
+  padding: 4px 12px;
   border: 2px solid #e2e8f0;
   border-radius: 1rem;
   font-size: 1rem;
@@ -268,6 +267,32 @@ img.bgimg {
   gap: 1.25rem;
   align-items: start;
 }
+.add_cart_box {
+  display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 14px;
+    margin-top: -50px;
+    position: relative;
+    z-index: 1;
+}
+.add-cart {
+    padding: 4px 14px;
+    background: #5a397b;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    font-size: 14px;
+    white-space: nowrap;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+}
 
 .message.bot .product-cards-container {
   max-width: 100%;
@@ -310,11 +335,12 @@ img.bgimg {
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
   .chat-container {
-    padding: 10px;
+    padding: 20px;
   }
 
   .chat-header {
     font-size: 2rem;
+    padding: 20px;
   }
 
   .chat-wrapper {
@@ -335,13 +361,13 @@ img.bgimg {
     max-width: 90%;
     padding: 0.875rem 1rem;
   }
+  .chat-input{
+    width: 100%;
+  }
+ 
 }
 
 @media (max-width: 480px) {
-  .chat-header {
-    font-size: 1.75rem;
-  }
-
   .chat-window {
     height: 350px;
   }
